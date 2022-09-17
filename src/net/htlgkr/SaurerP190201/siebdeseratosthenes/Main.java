@@ -5,9 +5,7 @@ import java.util.ArrayList;
 public class Main
 {
 
-    ArrayList<Integer> primes = new ArrayList<>();
     public static ArrayList<Integer> zahlenbisoberg;
-
     public static void main(String[] args)
     {
         EratosthenesPrimeSieve eps = new EratosthenesPrimeSieve(100);

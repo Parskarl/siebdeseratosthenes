@@ -25,12 +25,13 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
     @Override
     public boolean isPrime(int p)
     {
-        //if((p%2)==0) {return false;}
-        //if((p%3)==0) {return false;}
-        //if((p%5)==0) {return false;}
-        //if((p%7)==0) {return false;}
-        //if((p%11)==0) {return false;}
-
+        for (int i = 2; i < p; i++)
+        {
+            if (p % i == 0)
+            {
+                return false;
+            }
+        }
         primes.add(p);
         return true;
     }
