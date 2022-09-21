@@ -6,16 +6,6 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
 
     public int obergrenze;
     ArrayList<Integer> primes = new ArrayList<>();
-    public static ArrayList<Integer> zahlenbisoberg;
-
-    public void sieb()
-    {
-        zahlenbisoberg = new ArrayList<>();
-        for (int i = 2; i <= obergrenze; i++)
-        {
-            zahlenbisoberg.add(i);
-        }
-    }
 
     public EratosthenesPrimeSieve(int o)
     {
@@ -25,6 +15,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
     @Override
     public boolean isPrime(int p)
     {
+        if(p==0){return false;}
         for (int i = 2; i < p; i++)
         {
             if (p % i == 0)
