@@ -1,6 +1,7 @@
 package net.htlgkr.SaurerP190201.siebdeseratosthenes;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class Main
 {
@@ -8,7 +9,10 @@ public class Main
     public static ArrayList<Integer> noprimes;
     public static void main(String[] args)
     {
-        EratosthenesPrimeSieve eps = new EratosthenesPrimeSieve(100);
+        Scanner s = new Scanner(System.in);
+        System.out.println("Geben sie ihre Obergrenze Für die Primzahlberechnung ein:");
+        int eingabe = Integer.parseInt(s.nextLine());
+        EratosthenesPrimeSieve eps = new EratosthenesPrimeSieve(eingabe);
         zahlenbisoberg = new ArrayList<>();
         noprimes = new ArrayList<>();
         for (int i = 2; i <= eps.obergrenze; i++)
@@ -19,15 +23,16 @@ public class Main
         {
             if(eps.isPrime(i))
             {
-                int z =i;
+                int copyi =i;
                 int multipli = 2;
                 int tempz=0;
                 while(tempz<eps.obergrenze-1)
                 {
-                    tempz=z*multipli;
-                    if(tempz>=eps.obergrenze){break;}
+                    tempz=copyi*multipli;
+                    if(tempz>eps.obergrenze){break;}
                     multipli++;
-                    if(!noprimes.contains(tempz)){noprimes.add(tempz);}
+                    //if(zahlenbisoberg.contains(tempz)){Integer integer = tempz;zahlenbisoberg.remove(integer);}
+                if(!noprimes.contains(tempz)){noprimes.add(tempz);}
                 }
             }
                 /*int z =i;
