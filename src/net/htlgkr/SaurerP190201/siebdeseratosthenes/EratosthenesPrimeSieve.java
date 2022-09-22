@@ -23,6 +23,7 @@ public class EratosthenesPrimeSieve implements PrimeSieve{
                 return false;
             }
         }
+        if(primes.contains(p)){return true;}
         primes.add(p);
         return true;
     }
